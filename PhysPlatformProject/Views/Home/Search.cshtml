@@ -1,0 +1,27 @@
+﻿@model List<PhysPlatformProject.ViewModels.QuestionViewModel>
+
+@{
+    ViewBag.Title = "Search";
+}
+<div class="container-fluid text-sm-center p-5 bg-light">
+    <!-- bg-light is background color & p-5 is padding -->
+    <h1 class="display-2">Может</h1>
+    <p class="lead">ты пидор?</p>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <h3>Search results for @ViewBag.str</h3>
+        <table class="table">
+            @foreach (var item in Model)
+            {
+                Html.RenderPartial("Question", item);
+            }
+        </table>
+       
+    </div>
+</div>
+
+<script>
+    $("a[href='/allquestions']").attr("id", "active");
+</script>
